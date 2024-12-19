@@ -7,7 +7,7 @@ package com.platzi.mensajes_app;
 
 /**
  *
- * @author santiagufmen
+ * @author santiaguf
  */
 public class Mensajes {
     int id_mensaje;
