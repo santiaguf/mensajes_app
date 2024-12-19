@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ohmyfi
+ * @author santiaguf
  */
 public class mensajesService {
     public static void crearMensaje(){

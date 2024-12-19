@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author ohmyfi
+ * @author santiaguf
  */
 public class MensajesDAO {
     

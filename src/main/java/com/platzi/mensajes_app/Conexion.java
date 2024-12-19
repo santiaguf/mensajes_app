@@ -8,23 +8,28 @@ package com.platzi.mensajes_app;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import io.github.cdimascio.dotenv.Dotenv;
 
 /**
  *
- * @author ohmyfi
+ * @author santiaguf
  */
 public class Conexion {
-    
     public Connection get_connection(){
-        Connection conection = null;
+
+        Dotenv dotenv = Dotenv.load();
+
+        Connection connection= null;
         try{
-            conection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mensajes_app","root","");
-           
-        }catch(SQLException e) {
+            connection = DriverManager.getConnection("jdbc:mysql://"
+                            +dotenv.get("DATABASE_HOST")+
+                            ":"+dotenv.get("DATABASE_PORT")+
+                            "/"+dotenv.get("DATABASE_NAME")+"",
+                    dotenv.get("DATABASE_USER"),
+                    dotenv.get("DATABASE_PASSWORD"));
+        }catch(Exception e){
             System.out.println(e);
         }
-        return conection;
-        
+        return connection;
     }
-    
 }
